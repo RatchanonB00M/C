@@ -1,0 +1,84 @@
+<div class="container mt-4">
+  <h2>Manage Equipment</h2>
+
+  <!-- ADD Equipment Section -->
+  <div class="mb-5">
+    <h3>Add Equipment</h3>
+    <form (ngSubmit)="onSubmit('add')">
+      <div class="mb-3">
+        <label for="addEquipmentId" class="form-label">Equipment ID</label>
+        <input type="text" class="form-control" id="addEquipmentId" [(ngModel)]="addEquipmentData.equipmentId" name="addEquipmentId" required />
+      </div>
+      <div class="mb-3">
+        <label for="addEquipmentName" class="form-label">Equipment Name</label>
+        <input type="text" class="form-control" id="addEquipmentName" [(ngModel)]="addEquipmentData.equipmentName" name="addEquipmentName" required />
+      </div>
+      <div class="mb-3">
+        <label for="addDescription" class="form-label">Description</label>
+        <input type="text" class="form-control" id="addDescription" [(ngModel)]="addEquipmentData.description" name="addDescription" />
+      </div>
+      <div class="mb-3">
+        <label for="addStatus" class="form-label">Status</label>
+        <input type="text" class="form-control" id="addStatus" [(ngModel)]="addEquipmentData.status" name="addStatus" />
+      </div>
+      <div class="mb-3">
+        <label for="addPurchaseDate" class="form-label">Purchase Date</label>
+        <input type="date" class="form-control" id="addPurchaseDate" [(ngModel)]="addEquipmentData.purchaseDate" name="addPurchaseDate" />
+      </div>
+      <div class="mb-3">
+        <label for="addCategory" class="form-label">Category</label>
+        <input type="text" class="form-control" id="addCategory" [(ngModel)]="addEquipmentData.category" name="addCategory" />
+      </div>
+      <button type="submit" class="btn btn-success">Add Equipment</button>
+    </form>
+  </div>
+
+  <!-- EDIT Equipment Section -->
+  <div class="mb-5">
+    <h3>Edit Equipment</h3>
+    <form (ngSubmit)="onSubmit('edit')">
+      <div class="mb-3">
+        <label for="editEquipmentId" class="form-label">Equipment ID</label>
+        <input type="text" class="form-control" id="editEquipmentId" [(ngModel)]="editEquipmentData.equipmentId" name="editEquipmentId" required />
+      </div>
+      <div class="mb-3">
+        <label for="editEquipmentName" class="form-label">Equipment Name</label>
+        <input type="text" class="form-control" id="editEquipmentName" [(ngModel)]="editEquipmentData.equipmentName" name="editEquipmentName" required />
+      </div>
+      <div class="mb-3">
+        <label for="editDescription" class="form-label">Description</label>
+        <input type="text" class="form-control" id="editDescription" [(ngModel)]="editEquipmentData.description" name="editDescription" />
+      </div>
+      <div class="mb-3">
+        <label for="editStatus" class="form-label">Status</label>
+        <input type="text" class="form-control" id="editStatus" [(ngModel)]="editEquipmentData.status" name="editStatus" />
+      </div>
+      <div class="mb-3">
+        <label for="editPurchaseDate" class="form-label">Purchase Date</label>
+        <input type="date" class="form-control" id="editPurchaseDate" [(ngModel)]="editEquipmentData.purchaseDate" name="editPurchaseDate" />
+      </div>
+      <div class="mb-3">
+        <label for="editCategory" class="form-label">Category</label>
+        <input type="text" class="form-control" id="editCategory" [(ngModel)]="editEquipmentData.category" name="editCategory" />
+      </div>
+      <button type="submit" class="btn btn-warning">Edit Equipment</button>
+    </form>
+  </div>
+
+  <!-- DELETE Equipment Section -->
+  <div class="mb-5">
+    <h3>Delete Equipment</h3>
+    <form (ngSubmit)="onSubmit('delete')">
+      <div class="mb-3">
+        <label for="deleteEquipmentId" class="form-label">Equipment ID</label>
+        <input type="text" class="form-control" id="deleteEquipmentId" [(ngModel)]="deleteEquipmentData.equipmentId" name="deleteEquipmentId" required />
+      </div>
+      <button type="submit" class="btn btn-danger">Delete Equipment</button>
+    </form>
+  </div>
+
+  <!-- Display response message -->
+  <div *ngIf="responseMessage" class="alert alert-info mt-3">
+    {{ responseMessage }}
+  </div>
+</div>

@@ -1,0 +1,23 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th>Equipment ID</th>
+        <th>Equipment Name</th>
+        <th>Description</th>
+        <th>Category</th>
+        <th>Purchase Date</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let equipment of equipments">
+        <td>{{ equipment.EquipmentId }}</td>
+        <td>{{ equipment.EquipmentName }}</td>
+        <td>{{ equipment.Description }}</td>
+        <td>{{ equipment.Category }}</td>
+        <td>{{ equipment.PurchaseDate | date }}</td>
+        <td>{{ equipment.Status }}</td>
+      </tr>
+    </tbody>
+  </table>
+  

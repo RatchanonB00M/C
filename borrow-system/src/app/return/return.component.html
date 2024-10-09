@@ -1,0 +1,21 @@
+<div class="container mt-4">
+    <h2>คืนครุภัณฑ์</h2>
+  
+    <form (ngSubmit)="onSubmit()" #returnForm="ngForm">
+      <div class="mb-3">
+        <label for="userId" class="form-label">User ID</label>
+        <input type="text" class="form-control" id="userId" [(ngModel)]="returnData.userId" name="userId" required>
+      </div>
+  
+      <div class="mb-3">
+        <label for="equipmentId" class="form-label">Equipment ID</label>
+        <input type="text" class="form-control" id="equipmentId" [(ngModel)]="returnData.equipmentId" name="equipmentId" required>
+      </div>
+  
+      <button type="submit" class="btn btn-primary" [disabled]="!returnForm.form.valid">Submit</button>
+    </form>
+  
+    <div *ngIf="responseMessage" class="alert alert-info mt-3">
+      {{ responseMessage }}
+    </div>
+</div>

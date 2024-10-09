@@ -1,0 +1,38 @@
+<div class="container mt-4">
+    <h2>ยืมครุภัณฑ์</h2>
+    
+    <form (ngSubmit)="onSubmit()" #borrowForm="ngForm">
+      <div class="mb-3">
+        <label for="userId" class="form-label">User ID</label>
+        <input type="text" class="form-control" id="userId" [(ngModel)]="borrowData.userId" name="userId" required>
+      </div>
+  
+      <div class="mb-3">
+        <label for="equipmentId" class="form-label">Equipment ID</label>
+        <input type="text" class="form-control" id="equipmentId" [(ngModel)]="borrowData.equipmentId" name="equipmentId" required>
+      </div>
+  
+      <div class="mb-3">
+        <label for="borrowDate" class="form-label">Borrow Date</label>
+        <input type="date" class="form-control" id="borrowDate" [(ngModel)]="borrowData.borrowDate" name="borrowDate" required>
+      </div>
+  
+      <div class="mb-3">
+        <label for="purpose" class="form-label">Purpose</label>
+        <textarea type="text-area" class="form-control" id="purpose" [(ngModel)]="borrowData.purpose" name="purpose" required></textarea>
+        <br>
+      </div>
+  
+      <div class="mb-3">
+        <label for="location" class="form-label">Location</label>
+        <input type="text" class="form-control" id="location" [(ngModel)]="borrowData.location" name="location" required>
+      </div>
+  
+      <button type="submit" class="btn btn-primary" [disabled]="!borrowForm.form.valid">Submit</button>
+    </form>
+  
+    <div *ngIf="responseMessage" class="alert alert-info mt-3">
+      {{ responseMessage }}
+    </div>
+  </div>
+  
